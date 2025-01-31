@@ -6,7 +6,9 @@
 void connectWifi(char* ssid, char* password) {
   // Connect to WiFi
   WiFi.begin(ssid, password);
-  Serial.println("Connecting to WiFi...");
+  Serial.print("Connecting to ");
+  Serial.print(ssid);
+  Serial.println("...");
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
@@ -14,7 +16,9 @@ void connectWifi(char* ssid, char* password) {
   }
 
   // Once connected, print the IP address
-  Serial.println("\nConnected to WiFi!");
-  Serial.print("IP Address: ");
+  Serial.print("\nConnected to ");
+  Serial.print(ssid);
+  Serial.println("!");
+  Serial.print("\tIP Address: ");
   Serial.println(WiFi.localIP());
 }

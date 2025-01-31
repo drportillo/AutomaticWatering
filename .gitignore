@@ -4,3 +4,6 @@
 .vscode/launch.json
 .vscode/ipch
 src/passwords.h
+scratch
+*png
+*xbm

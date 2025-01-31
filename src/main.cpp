@@ -47,4 +47,6 @@ void loop() {
 
   // Render the screen with the sensor data
   renderScreen(temperatures, humidities, wifi_status, blt_status);
+
+  delay(5000);
 }

@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include "sensors.h"
-#include "../constants.h"
+#include "../../src/constants.h"
 
 // Function to read temperature from an NTC thermistor
 float readTemperature(int pin) {

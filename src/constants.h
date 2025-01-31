@@ -32,7 +32,4 @@
 #define CIRCLE_Y 10
 #define CIRCLE_X_START 190
 
-#define SECRET_SSID "CasaRP"
-#define SECRET_PASS "Zapati!!a1"
-
 #endif

@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "wifi.h"
 #include "WiFiS3.h"
-#include "../constants.h"
+#include "../../src/constants.h"
 
 void connectWifi(char* ssid, char* password) {
   // Connect to WiFi

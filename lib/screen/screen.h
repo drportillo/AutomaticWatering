@@ -13,4 +13,7 @@ void drawSensorIndicators(float temperatures[]);
 void drawWifiIndicator(bool status); 
 
 void drawBLTIndicator(bool status); 
+
+// void drawSections();
+
 #endif

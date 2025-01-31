@@ -1,9 +1,18 @@
 #include "src/constants.h"
+#include "src/passwords.h"
 #include "src/sensors/sensors.h"
 #include "src/screen/screen.h"
 #include "src/network/wifi.h"
 #include <WiFiS3.h>  // Include the WiFi library for the R4 WiFi
 
+
+#ifndef SECRET_SSID
+#define SECRET_SSID "Wifi SSID not defined. Define it in src/passwords.h"
+#endif
+
+#ifndef SECRET_PASS
+#define SECRET_PASS "Wifi Password not defined. Define it in  src/passwords.h"
+#endif
 
 void setup() {
   // Start serial communication

@@ -1,8 +1,8 @@
 #include "constants.h"
 #include "passwords.h"
-#include "sensors/sensors.h"
-#include "screen/screen.h"
-#include "network/wifi.h"
+#include "sensors.h"
+#include "screen.h"
+#include "wifi.h"
 #include <WiFiS3.h>  // Include the WiFi library for the R4 WiFi
 
 
@@ -11,7 +11,7 @@
 #endif
 
 #ifndef SECRET_PASS
-#define SECRET_PASS "Wifi Password not defined. Define it in  src/passwords.h"
+#define SECRET_PASS "Wifi Password not defined. Define it in src/passwords.h"
 #endif
 
 void setup() {

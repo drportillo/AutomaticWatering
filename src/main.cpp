@@ -1,8 +1,8 @@
-#include "src/constants.h"
-#include "src/passwords.h"
-#include "src/sensors/sensors.h"
-#include "src/screen/screen.h"
-#include "src/network/wifi.h"
+#include "constants.h"
+#include "passwords.h"
+#include "sensors/sensors.h"
+#include "screen/screen.h"
+#include "network/wifi.h"
 #include <WiFiS3.h>  // Include the WiFi library for the R4 WiFi
 
 

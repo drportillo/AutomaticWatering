@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "wifi.h"
 #include "WiFiS3.h"
-#include "/home/deck/Arduino/AutomaticWatering/src/constants.h"
+#include "../constants.h"
 
 void connectWifi(char* ssid, char* password) {
   // Connect to WiFi

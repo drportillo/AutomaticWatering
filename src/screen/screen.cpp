@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include <TFT_eSPI.h>  // Include the TFT_eSPI library
 #include "screen.h"
-#include "/home/deck/Arduino/AutomaticWatering/src/constants.h"
+#include "../constants.h"
 
 // Initialize the TFT display
 TFT_eSPI tft = TFT_eSPI();

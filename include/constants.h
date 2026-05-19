@@ -36,6 +36,10 @@
 // DST (CEST, UTC+2) is applied automatically by time_manager.
 #define TZ_BASE_OFFSET_HOURS 1
 
+// Loop and startup timing (ms)
+#define SETUP_DELAY_MS  3000
+#define LOOP_DELAY_MS   5000
+
 // Threshold to determine if a sensor is disconnected
 #define DISCONNECTED_TEMP_THRESHOLD 0
 

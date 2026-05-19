@@ -36,7 +36,7 @@ The 240×240 screen is divided into a fixed grid:
 
 ```
 y=0  ┌──────────────────────────────┐
-     │  WiFi: ON       BT: OFF      │  ← top bar (20px)
+     │  hh:mm     WiFi: ON  BT: OFF │  ← top bar (20px)
 y=20 ├────────┬─────────┬───────────┤
      │        │         │           │
      │ zone 1 │  zone 2 │  zone 3   │  ← flower area (110px)
@@ -85,7 +85,8 @@ void startScreen();  // Call once in setup() — initialises TFT and draws place
 // Re-draws the entire screen with current readings.
 // pumps[]: true = pump running (shows droplets)
 // wifi_status / blt_status: true = connected (shown in green)
-void renderScreen(float temperatures[], float humidities[], bool pumps[], bool wifi_status, bool blt_status);
+// timeStr: "HH:MM" shown in the top bar; pass "--:--" before NTP syncs
+void renderScreen(float temperatures[], float humidities[], bool pumps[], bool wifi_status, bool blt_status, const char* timeStr);
 ```
 
 ### Usage
@@ -100,7 +101,13 @@ bool pumps[3] = {
     digitalRead(PUMP2) == HIGH,
     digitalRead(PUMP3) == HIGH
 };
-renderScreen(g_temperatures, g_humidities, pumps, wifi_status, false);
+char timeStr[6] = "--:--";
+if (isTimeSynced()) {
+    String t = getFormattedTime();   // "HH:MM:SS"
+    strncpy(timeStr, t.c_str(), 5);
+    timeStr[5] = '\0';
+}
+renderScreen(g_temperatures, g_humidities, pumps, wifi_status, false, timeStr);
 ```
 
 ## Dependencies

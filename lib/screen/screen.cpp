@@ -134,27 +134,35 @@ void startScreen() {
     drawLayout();
 
     tft.setTextSize(1);
+    tft.setTextColor(TFT_WHITE, TFT_BLACK);
     tft.setCursor(4, 6);
-    tft.print("WiFi:--   BT:--");
+    tft.print("--:--");
+    tft.setCursor(80, 6);
+    tft.print("WiFi:--");
+    tft.setCursor(160, 6);
+    tft.print("BT:--");
 
     for (int i = 0; i < 3; i++) {
         drawFlower(i * COL_W, 50.0f, 20.0f, true, false);  // neutral placeholder
     }
 }
 
-void renderScreen(float temperatures[], float humidities[], bool pumps[], bool wifi_status, bool blt_status) {
+void renderScreen(float temperatures[], float humidities[], bool pumps[], bool wifi_status, bool blt_status, const char* timeStr) {
     tft.fillScreen(TFT_BLACK);
     drawLayout();
 
-    // Top bar
+    // Top bar: time on the left, WiFi / BT on the right
     tft.setTextSize(1);
-    tft.setCursor(4, 6);
     tft.setTextColor(TFT_WHITE, TFT_BLACK);
+    tft.setCursor(4, 6);
+    tft.print(timeStr);
+
+    tft.setCursor(80, 6);
     tft.print("WiFi:");
     tft.setTextColor(wifi_status ? TFT_GREEN : TFT_RED, TFT_BLACK);
     tft.print(wifi_status ? "ON " : "OFF");
 
-    tft.setCursor(140, 6);
+    tft.setCursor(160, 6);
     tft.setTextColor(TFT_WHITE, TFT_BLACK);
     tft.print("BT:");
     tft.setTextColor(blt_status ? TFT_GREEN : TFT_RED, TFT_BLACK);

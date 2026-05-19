@@ -28,7 +28,13 @@ static void refreshScreen() {
     digitalRead(PUMP2) == HIGH,
     digitalRead(PUMP3) == HIGH
   };
-  renderScreen(g_temperatures, g_humidities, pumps, g_wifi_status, false);
+  char timeStr[6] = "--:--";
+  if (isTimeSynced()) {
+    String t = getFormattedTime();  // "HH:MM:SS"
+    strncpy(timeStr, t.c_str(), 5);
+    timeStr[5] = '\0';
+  }
+  renderScreen(g_temperatures, g_humidities, pumps, g_wifi_status, false, timeStr);
 }
 
 void setup()
@@ -48,7 +54,7 @@ void setup()
   setDebugMessageLevel(2);
   ArduinoCloud.printDebugInfo();
 
-  delay(3000);
+  delay(SETUP_DELAY_MS);
 }
 
 void loop()
@@ -83,7 +89,7 @@ void loop()
     ac_h = ac_h + dtostrf(g_humidities[i], 6, 2, buffer);
   }
 
-  delay(5000);
+  delay(LOOP_DELAY_MS);
 }
 
 void onAcPump1Change() {

@@ -23,14 +23,22 @@
 #define SERIES_RESISTOR 10000         // Value of the fixed resistor in the voltage divider
 
 // Constants for humidity sensor calibration
-#define HUMIDITY_MIN 1022       // Minimum analog value for humidity sensor
-#define HUMIDITY_MAX 300    // Maximum analog value for humidity sensor
+#define HUMIDITY_MIN 1022    // Minimum analog value for humidity sensor
+#define HUMIDITY_MAX 300     // Maximum analog value for humidity sensor
 #define HUMIDITY_RH_MIN 0    // Minimum relative humidity (%)
 #define HUMIDITY_RH_MAX 100  // Maximum relative humidity (%)
 
 //Humidity sensor tresholds to trigger pumps on
 #define HUMIDITY_TRESHOLD_PUMP_ON 50
 #define HUMIDITY_TRESHOLD_PUMP_OFF 85
+
+// Standard time offset (non-DST). Spain/Madrid CET = UTC+1.
+// DST (CEST, UTC+2) is applied automatically by time_manager.
+#define TZ_BASE_OFFSET_HOURS 1
+
+// Loop and startup timing (ms)
+#define SETUP_DELAY_MS  3000
+#define LOOP_DELAY_MS   5000
 
 // Threshold to determine if a sensor is disconnected
 #define DISCONNECTED_TEMP_THRESHOLD 0
